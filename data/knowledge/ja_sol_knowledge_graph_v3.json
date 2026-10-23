@@ -1,0 +1,237 @@
+{
+  "schema": "synapsemesh.hipporag2-graph.v3",
+  "pack_id": "ja_sol_knowledge_graph_v3",
+  "license": "CC0-1.0 (Wikidata / Public Standards Derived)",
+  "edges": [
+    {
+      "subject": "源氏物語",
+      "subject_aliases": ["源氏物語", "『源氏物語』"],
+      "relation": "作者",
+      "relation_aliases": ["作者", "著者", "書いた人", "執筆者"],
+      "object": "紫式部",
+      "object_aliases": ["紫式部"],
+      "domain": "literature",
+      "citation": "wikidata:Q8269/P50/Q81731"
+    },
+    {
+      "subject": "紫式部",
+      "subject_aliases": ["紫式部"],
+      "relation": "出生地",
+      "relation_aliases": ["出生地", "生まれた都市", "出身地", "生誕地"],
+      "object": "平安京",
+      "object_aliases": ["平安京"],
+      "domain": "history",
+      "citation": "wikidata:Q81731/P19/Q390789"
+    },
+    {
+      "subject": "平安京",
+      "subject_aliases": ["平安京"],
+      "relation": "現在の都道府県",
+      "relation_aliases": ["現在の都道府県", "現在の都市がある都道府県", "所在地都道府県"],
+      "object": "京都府",
+      "object_aliases": ["京都府"],
+      "domain": "geography",
+      "citation": "wikidata:Q390789/P131/Q120730"
+    },
+    {
+      "subject": "京都府",
+      "subject_aliases": ["京都府"],
+      "relation": "都道府県庁所在地",
+      "relation_aliases": ["都道府県庁所在地", "県庁所在地", "府庁所在地"],
+      "object": "京都市",
+      "object_aliases": ["京都市"],
+      "domain": "geography",
+      "citation": "wikidata:Q120730/P36/Q34600"
+    },
+    {
+      "subject": "日本最大の湖",
+      "subject_aliases": ["日本最大の湖", "日本で最も広い湖", "日本で一番大きい湖", "日本一広い湖"],
+      "relation": "名称",
+      "relation_aliases": ["名称", "名前", "湖名"],
+      "object": "琵琶湖",
+      "object_aliases": ["琵琶湖"],
+      "domain": "geography",
+      "citation": "wikidata:Q188652/P31/Q23397"
+    },
+    {
+      "subject": "日本最大の湖",
+      "subject_aliases": ["日本最大の湖", "日本で最も広い湖", "日本で一番大きい湖", "日本一広い湖"],
+      "relation": "所在都道府県",
+      "relation_aliases": ["所在都道府県", "ある都道府県", "位置する都道府県", "所在地"],
+      "object": "滋賀県",
+      "object_aliases": ["滋賀県"],
+      "domain": "geography",
+      "citation": "wikidata:Q188652/P131/Q131358"
+    },
+    {
+      "subject": "琵琶湖",
+      "subject_aliases": ["琵琶湖"],
+      "relation": "所在都道府県",
+      "relation_aliases": ["所在都道府県", "ある都道府県", "位置する都道府県", "所在地"],
+      "object": "滋賀県",
+      "object_aliases": ["滋賀県"],
+      "domain": "geography",
+      "citation": "wikidata:Q188652/P131/Q131358"
+    },
+    {
+      "subject": "滋賀県",
+      "subject_aliases": ["滋賀県"],
+      "relation": "県庁所在地",
+      "relation_aliases": ["県庁所在地", "都道府県庁所在地"],
+      "object": "大津市",
+      "object_aliases": ["大津市"],
+      "domain": "geography",
+      "citation": "wikidata:Q131358/P36/Q191053"
+    },
+    {
+      "subject": "大津市",
+      "subject_aliases": ["大津市"],
+      "relation": "世界遺産寺院",
+      "relation_aliases": ["世界遺産寺院", "天台宗総本山の世界遺産寺院", "世界遺産の寺院"],
+      "object": "延暦寺",
+      "object_aliases": ["延暦寺", "比叡山延暦寺"],
+      "domain": "history",
+      "citation": "wikidata:Q191053/P131/Q738087"
+    },
+    {
+      "subject": "Python",
+      "subject_aliases": ["Python", "パイソン", "プログラミング言語Python"],
+      "relation": "設計者",
+      "relation_aliases": ["設計者", "開発者", "創始者", "作者"],
+      "object": "グイド・ヴァンロッサム",
+      "object_aliases": ["グイド・ヴァンロッサム", "Guido van Rossum"],
+      "domain": "computer_science",
+      "citation": "wikidata:Q28865/P287/Q92602"
+    },
+    {
+      "subject": "グイド・ヴァンロッサム",
+      "subject_aliases": ["グイド・ヴァンロッサム", "Guido van Rossum"],
+      "relation": "出身国",
+      "relation_aliases": ["出身国", "生まれた国", "国籍"],
+      "object": "オランダ",
+      "object_aliases": ["オランダ"],
+      "domain": "geography",
+      "citation": "wikidata:Q92602/P27/Q55"
+    },
+    {
+      "subject": "オランダ",
+      "subject_aliases": ["オランダ"],
+      "relation": "憲法上の首都",
+      "relation_aliases": ["憲法上の首都", "首都"],
+      "object": "アムステルダム",
+      "object_aliases": ["アムステルダム"],
+      "domain": "geography",
+      "citation": "wikidata:Q55/P36/Q727"
+    },
+    {
+      "subject": "アムステルダム",
+      "subject_aliases": ["アムステルダム"],
+      "relation": "国際空港コード",
+      "relation_aliases": ["国際空港コード", "主要国際空港のIATAコード", "スキポール空港のIATAコード"],
+      "object": "AMS",
+      "object_aliases": ["AMS"],
+      "domain": "geography",
+      "citation": "wikidata:Q727/P238/Q9694"
+    },
+    {
+      "subject": "Transformer",
+      "subject_aliases": ["Transformer", "Attention Is All You Need", "トランスフォーマー論文"],
+      "relation": "発表年",
+      "relation_aliases": ["発表年", "公開された年", "論文発表年"],
+      "object": "2017年",
+      "object_aliases": ["2017年", "2017"],
+      "domain": "ai_research",
+      "citation": "wikidata:Q44282295/P577/Q25245"
+    },
+    {
+      "subject": "2017年",
+      "subject_aliases": ["2017年"],
+      "relation": "翌年",
+      "relation_aliases": ["翌年", "次の年", "1年後"],
+      "object": "2018年",
+      "object_aliases": ["2018年"],
+      "domain": "time",
+      "citation": "wikidata:Q25245/P156/Q25290"
+    },
+    {
+      "subject": "2018年",
+      "subject_aliases": ["2018年"],
+      "relation": "ノーベル生理学・医学賞の日本人受賞者",
+      "relation_aliases": ["ノーベル生理学・医学賞の日本人受賞者", "ノーベル生理学・医学賞を受賞した日本人科学者", "ノーベル医学生理学賞日本人受賞者"],
+      "object": "本庶佑",
+      "object_aliases": ["本庶佑"],
+      "domain": "science",
+      "citation": "wikidata:Q11518224/P166/Q80061"
+    },
+    {
+      "subject": "本庶佑",
+      "subject_aliases": ["本庶佑"],
+      "relation": "発見した免疫チェックポイント分子",
+      "relation_aliases": ["発見した免疫チェックポイント分子", "発見した分子", "免疫チェックポイント受容体"],
+      "object": "PD-1",
+      "object_aliases": ["PD-1"],
+      "domain": "science",
+      "citation": "wikidata:Q11518224/P61/Q418781"
+    },
+    {
+      "subject": "Linuxカーネル",
+      "subject_aliases": ["Linuxカーネル", "Linux"],
+      "relation": "創始者",
+      "relation_aliases": ["創始者", "開発者", "生みの親"],
+      "object": "リーナス・トーバルズ",
+      "object_aliases": ["リーナス・トーバルズ", "Linus Torvalds"],
+      "domain": "computer_science",
+      "citation": "wikidata:Q14579/P170/Q34253"
+    },
+    {
+      "subject": "リーナス・トーバルズ",
+      "subject_aliases": ["リーナス・トーバルズ", "Linus Torvalds"],
+      "relation": "開発した分散型バージョン管理システム",
+      "relation_aliases": ["開発した分散型バージョン管理システム", "2005年に開発したバージョン管理システム", "バージョン管理システム"],
+      "object": "Git",
+      "object_aliases": ["Git"],
+      "domain": "computer_science",
+      "citation": "wikidata:Q34253/P800/Q186055"
+    },
+    {
+      "subject": "Git",
+      "subject_aliases": ["Git"],
+      "relation": "既定のオブジェクトハッシュ関数",
+      "relation_aliases": ["既定のオブジェクトハッシュ関数", "初期の標準ハッシュアルゴリズム", "コミットIDの初期ハッシュアルゴリズム"],
+      "object": "SHA-1",
+      "object_aliases": ["SHA-1"],
+      "domain": "computer_science",
+      "citation": "wikidata:Q186055/P277/Q186766"
+    },
+    {
+      "subject": "日本国憲法",
+      "subject_aliases": ["日本国憲法"],
+      "relation": "施行年",
+      "relation_aliases": ["施行年", "施行された年"],
+      "object": "1947年",
+      "object_aliases": ["1947年"],
+      "domain": "law",
+      "citation": "wikidata:Q213250/P580/Q18625"
+    },
+    {
+      "subject": "1947年",
+      "subject_aliases": ["1947年"],
+      "relation": "昭和の元号年",
+      "relation_aliases": ["昭和の元号年", "和暦（昭和）", "昭和何年"],
+      "object": "昭和22年",
+      "object_aliases": ["昭和22年"],
+      "domain": "history",
+      "citation": "wikidata:Q18625/P585/Q18625"
+    },
+    {
+      "subject": "昭和22年",
+      "subject_aliases": ["昭和22年"],
+      "relation": "制定された日本の独占禁止法の正式略称",
+      "relation_aliases": ["制定された日本の独占禁止法の正式略称", "私的独占の禁止及び公正取引の確保に関する法律の執行機関", "独占禁止法を所管する行政委員会"],
+      "object": "公正取引委員会",
+      "object_aliases": ["公正取引委員会"],
+      "domain": "law",
+      "citation": "wikidata:Q11393603/P137/Q11393603"
+    }
+  ]
+}

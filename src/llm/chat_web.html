@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SynapseMesh v9qa ローカルチャット</title>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    const theme =
+      param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<style>
+:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef; --cp-bg-elevated: #fcfbf8; --cp-surface: #ffffff; --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede; --cp-border-strong: #919191; --cp-text: #242424; --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f; --cp-accent: #b11f4b; --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08); --cp-accent-fg: #ffffff; --cp-success: #16a34a;
+  --cp-danger: #dc2626; --cp-warning: #f59e0b; --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12); --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86); --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55); --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a; --cp-bg-elevated: #343231; --cp-surface: #292929; --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747; --cp-border-strong: #5f5f5f; --cp-text: #dedede; --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0; --cp-accent: #fd8ea1; --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14); --cp-accent-fg: #1a1a1a; --cp-success: #4ade80;
+  --cp-danger: #f87171; --cp-warning: #fbbf24; --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32); --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72); --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04); --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cp-bg); color: var(--cp-text);
+  font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif; }
+main { max-width: 860px; margin: 0 auto; padding: 16px; display: flex; flex-direction: column;
+  gap: 12px; min-height: 100vh; }
+h1 { font-size: 1.2rem; margin: 4px 0; }
+.card { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px;
+  padding: 12px 16px; box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14); }
+.notice { border-color: var(--cp-warning); font-size: 0.9rem; color: var(--cp-text-muted); }
+.notice strong { color: var(--cp-text); }
+#status { font-size: 0.9rem; }
+#status.ready { color: var(--cp-success); }
+#status.error { color: var(--cp-danger); }
+#log { flex: 1; display: flex; flex-direction: column; gap: 8px; overflow-y: auto; }
+.msg { padding: 8px 12px; border-radius: 0.625rem; white-space: pre-wrap; line-height: 1.5;
+  max-width: 85%; border: 1px solid var(--cp-border); }
+.user { align-self: flex-end; background: var(--cp-accent-soft); }
+.assistant { align-self: flex-start; background: var(--cp-surface-soft); }
+.meta { font-size: 0.75rem; color: var(--cp-text-soft); margin-top: 4px; }
+.err { align-self: stretch; color: var(--cp-danger); border-color: var(--cp-danger);
+  background: var(--cp-surface); }
+form { display: flex; gap: 8px; align-items: flex-end; }
+textarea { flex: 1; min-height: 64px; resize: vertical; padding: 8px; border-radius: 0.625rem;
+  border: 1px solid var(--cp-border-strong); background: var(--cp-surface); color: var(--cp-text);
+  font: inherit; }
+button { border: 0; border-radius: 0.625rem; padding: 8px 16px; font: inherit; cursor: pointer;
+  background: var(--cp-accent); color: var(--cp-accent-fg); }
+button:hover { background: var(--cp-accent-hover); }
+button.secondary { background: var(--cp-surface-soft); color: var(--cp-text);
+  border: 1px solid var(--cp-border); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+.controls { display: flex; gap: 12px; align-items: center; font-size: 0.85rem;
+  color: var(--cp-text-muted); flex-wrap: wrap; }
+input[type=number] { width: 72px; padding: 4px; border-radius: 0.625rem;
+  border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); }
+code { font-family: Consolas, "Courier New", Courier, monospace; }
+</style>
+</head>
+<body>
+<main>
+  <h1>SynapseMesh v9qa ローカルチャット <span style="font-weight:normal;font-size:0.85rem">(127.0.0.1 のみ / オフライン)</span></h1>
+  <div class="card notice">
+    <strong>CPU が既定です（CUDA は任意指定）。</strong> CPU はこの PC で約 3 トークン/秒
+    （実測、KV キャッシュ＋疎 MoE、ADR-0705）。実際の実行デバイスは下の状態欄に表示します。<br>
+    安定した完全一致の事実は、根拠付きローカル Knowledge Pack がモデル生成より先に処理します。
+    未登録・曖昧・否定質問は推測せず通常経路へ委譲します。モデル自体には誤答や反復が残ります。
+    外部ネットワークには送信しません。
+  </div>
+  <div id="status" class="card">モデル状態を確認中…</div>
+  <div id="log" class="card" aria-live="polite"></div>
+  <div class="controls">
+    <label>最大トークン数 <input id="budget" type="number" min="1" max="512" value="256"></label>
+    <span>履歴は直近 8 発言まで送信（長いほど遅くなります）</span>
+    <button id="reset" class="secondary" type="button">会話をリセット</button>
+  </div>
+  <form id="form">
+    <textarea id="input" placeholder="メッセージを入力（Ctrl+Enter で送信）" maxlength="2000"></textarea>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <button id="send" type="submit" disabled>送信</button>
+      <button id="cancel" class="secondary" type="button" disabled>中止</button>
+    </div>
+  </form>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const history = [];
+let ready = false, jobId = null;
+
+function add(cls, text) {
+  const div = document.createElement("div");
+  div.className = "msg " + cls;
+  div.textContent = text;
+  $("log").appendChild(div);
+  $("log").scrollTop = $("log").scrollHeight;
+  return div;
+}
+function setBusy(busy) {
+  $("send").disabled = busy || !ready;
+  $("cancel").disabled = !busy;
+  $("input").disabled = busy;
+}
+async function api(path, body) {
+  const opts = body === undefined ? {} :
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) };
+  const res = await fetch(path, opts);
+  let data = {};
+  try { data = await res.json(); } catch (_) { data = { error: "invalid response" }; }
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${data.error || "error"}`);
+  return data;
+}
+async function pollStatus() {
+  try {
+    const s = await api("/status");
+    const el = $("status");
+    if (s.state === "ready") {
+      ready = true;
+      el.className = "card ready";
+      el.textContent = `準備完了: ${s.info.run} (step ${s.info.step}, device=${s.info.device}, ` +
+        `${s.info.inference_weights}, 読み込み ${s.info.load_seconds} 秒, 貪欲デコード)`;
+      if (!jobId) setBusy(false);
+      return;
+    }
+    if (s.state === "error") {
+      el.className = "card error";
+      el.textContent = "モデルの読み込みに失敗しました: " + s.error;
+      return;
+    }
+    el.className = "card";
+    el.textContent = `モデルを読み込み中…（${s.seconds_since_start} 秒経過、通常 20〜60 秒）`;
+  } catch (e) {
+    $("status").className = "card error";
+    $("status").textContent = "サーバーに接続できません: " + e.message;
+  }
+  setTimeout(pollStatus, 2000);
+}
+async function send(text) {
+  history.push({ role: "user", content: text });
+  add("user", text);
+  const bubble = add("assistant", "生成中…");
+  const meta = document.createElement("div");
+  meta.className = "meta";
+  bubble.after(meta);
+  setBusy(true);
+  try {
+    const job = await api("/chat", {
+      messages: history.slice(-8), max_new_tokens: Number($("budget").value) || 256 });
+    jobId = job.id;
+    for (;;) {
+      await new Promise((r) => setTimeout(r, 500));
+      const j = await api("/job/" + jobId);
+      bubble.textContent = j.text || "生成中…";
+      const source = j.source && j.source !== "model" ? ` · ${j.source}` : "";
+      meta.textContent = `${j.status === "running" ? "生成中" : j.status} · ${j.tokens}/${j.max_new_tokens} トークン · ` +
+        `${j.seconds} 秒` + (j.tokens_per_second ? ` · ${j.tokens_per_second} tok/s` : "") + source;
+      if (j.status === "error") throw new Error(j.error);
+      if (j.status === "done" || j.status === "cancelled") {
+        if (j.status === "cancelled") meta.textContent += "（中止しました）";
+        if (j.text) history.push({ role: "assistant", content: j.text });
+        else history.pop();
+        break;
+      }
+    }
+  } catch (e) {
+    history.pop();
+    bubble.remove(); meta.remove();
+    add("err", "エラー: " + e.message);
+  } finally {
+    jobId = null;
+    setBusy(false);
+    $("input").focus();
+  }
+}
+$("form").addEventListener("submit", (ev) => {
+  ev.preventDefault();
+  const text = $("input").value.trim();
+  if (!text || !ready || jobId) return;
+  $("input").value = "";
+  send(text);
+});
+$("input").addEventListener("keydown", (ev) => {
+  if (ev.key === "Enter" && (ev.ctrlKey || ev.metaKey)) $("form").requestSubmit();
+});
+$("cancel").addEventListener("click", async () => {
+  if (!jobId) return;
+  try { await api(`/job/${jobId}/cancel`, {}); }
+  catch (e) { add("err", "中止できませんでした: " + e.message); }
+});
+$("reset").addEventListener("click", () => {
+  if (jobId) return;
+  history.length = 0;
+  $("log").innerHTML = "";
+});
+pollStatus();
+</script>
+</body>
+</html>

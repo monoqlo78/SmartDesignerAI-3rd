@@ -1,0 +1,30 @@
+{
+  "schema": "synapsemesh.factual-knowledge.v1",
+  "pack_id": "ja-core-facts-v2",
+  "license": "CC0-1.0",
+  "facts": [
+    {"subject":"日本","subject_aliases":["日本国","我が国"],"relation":"首都","relation_aliases":["首都はどこ","首都を教えて"],"object":"東京","source":{"provider":"Wikidata","subject_id":"Q17","property_id":"P36","object_id":"Q1490","url":"https://www.wikidata.org/wiki/Q17"}},
+    {"subject":"フランス","subject_aliases":["仏国"],"relation":"首都","relation_aliases":["首都はどこ","首都を教えて"],"object":"パリ","source":{"provider":"Wikidata","subject_id":"Q142","property_id":"P36","object_id":"Q90","url":"https://www.wikidata.org/wiki/Q142"}},
+    {"subject":"イギリス","subject_aliases":["英国","連合王国"],"relation":"首都","relation_aliases":["首都はどこ","首都を教えて"],"object":"ロンドン","source":{"provider":"Wikidata","subject_id":"Q145","property_id":"P36","object_id":"Q84","url":"https://www.wikidata.org/wiki/Q145"}},
+    {"subject":"アメリカ合衆国","subject_aliases":["アメリカ","米国"],"relation":"首都","relation_aliases":["首都はどこ","首都を教えて"],"object":"ワシントンD.C.","source":{"provider":"Wikidata","subject_id":"Q30","property_id":"P36","object_id":"Q61","url":"https://www.wikidata.org/wiki/Q30"}},
+    {"subject":"中国","subject_aliases":["中華人民共和国"],"relation":"首都","relation_aliases":["首都はどこ","首都を教えて"],"object":"北京","source":{"provider":"Wikidata","subject_id":"Q148","property_id":"P36","object_id":"Q956","url":"https://www.wikidata.org/wiki/Q148"}},
+    {"subject":"韓国","subject_aliases":["大韓民国"],"relation":"首都","relation_aliases":["首都はどこ","首都を教えて"],"object":"ソウル","source":{"provider":"Wikidata","subject_id":"Q884","property_id":"P36","object_id":"Q8684","url":"https://www.wikidata.org/wiki/Q884"}},
+    {"subject":"日本","subject_aliases":["日本国","我が国"],"relation":"通貨","relation_aliases":["お金の単位","通貨を教えて"],"object":"日本円","source":{"provider":"Wikidata","subject_id":"Q17","property_id":"P38","object_id":"Q8146","url":"https://www.wikidata.org/wiki/Q17"}},
+    {"subject":"日本","subject_aliases":["日本国","国内"],"relation":"一番高い山","relation_aliases":["最高峰","最も高い山"],"object":"富士山","source":{"provider":"Wikidata","subject_id":"Q17","property_id":"P610","object_id":"Q39231","url":"https://www.wikidata.org/wiki/Q39231"}},
+    {"subject":"日本","subject_aliases":["日本国","国内"],"relation":"一番大きい湖","relation_aliases":["最大の湖","最も大きい湖","面積最大の湖"],"object":"琵琶湖","source":{"provider":"Wikidata","subject_id":"Q17","property_id":"P206","object_id":"Q104691","url":"https://www.wikidata.org/wiki/Q104691"}},
+    {"subject":"日本","subject_aliases":["日本国","国内"],"relation":"一番長い川","relation_aliases":["最長の川","最も長い川"],"object":"信濃川","source":{"provider":"Wikidata","subject_id":"Q17","property_id":"P205","object_id":"Q386051","url":"https://www.wikidata.org/wiki/Q386051"}},
+    {"subject":"日本","subject_aliases":["日本国","国内"],"relation":"一番深い湖","relation_aliases":["最深の湖","最も深い湖"],"object":"田沢湖","source":{"provider":"Wikidata","subject_id":"Q17","property_id":"P206","object_id":"Q1054565","url":"https://www.wikidata.org/wiki/Q1054565"}},
+    {"subject":"源氏物語","subject_aliases":["『源氏物語』"],"relation":"作者","relation_aliases":["著者","書いた人"],"object":"紫式部","source":{"provider":"Wikidata","subject_id":"Q8269","property_id":"P50","object_id":"Q81731","url":"https://www.wikidata.org/wiki/Q8269"}},
+    {"subject":"枕草子","subject_aliases":["『枕草子』"],"relation":"作者","relation_aliases":["著者","書いた人"],"object":"清少納言","source":{"provider":"Wikidata","subject_id":"Q1062055","property_id":"P50","object_id":"Q132022","url":"https://www.wikidata.org/wiki/Q1062055"}},
+    {"subject":"徒然草","subject_aliases":["『徒然草』"],"relation":"作者","relation_aliases":["著者","書いた人"],"object":"兼好法師","source":{"provider":"Wikidata","subject_id":"Q1190696","property_id":"P50","object_id":"Q312142","url":"https://www.wikidata.org/wiki/Q1190696"}},
+    {"subject":"吾輩は猫である","subject_aliases":["『吾輩は猫である』"],"relation":"作者","relation_aliases":["著者","書いた人"],"object":"夏目漱石","source":{"provider":"Wikidata","subject_id":"Q1059777","property_id":"P50","object_id":"Q134378","url":"https://www.wikidata.org/wiki/Q1059777"}},
+    {"subject":"走れメロス","subject_aliases":["『走れメロス』"],"relation":"作者","relation_aliases":["著者","書いた人"],"object":"太宰治","source":{"provider":"Wikidata","subject_id":"Q1139724","property_id":"P50","object_id":"Q317685","url":"https://www.wikidata.org/wiki/Q1139724"}},
+    {"subject":"羅生門","subject_aliases":["『羅生門』"],"relation":"作者","relation_aliases":["著者","書いた人"],"object":"芥川龍之介","source":{"provider":"Wikidata","subject_id":"Q1078072","property_id":"P50","object_id":"Q186327","url":"https://www.wikidata.org/wiki/Q1078072"}},
+    {"subject":"銀河鉄道の夜","subject_aliases":["『銀河鉄道の夜』"],"relation":"作者","relation_aliases":["著者","書いた人"],"object":"宮沢賢治","source":{"provider":"Wikidata","subject_id":"Q1056137","property_id":"P50","object_id":"Q312633","url":"https://www.wikidata.org/wiki/Q1056137"}},
+    {"subject":"水","subject_aliases":["純水"],"relation":"化学式","relation_aliases":["分子式"],"object":"H2O","source":{"provider":"Wikidata","subject_id":"Q283","property_id":"P274","object_id":"Q283","url":"https://www.wikidata.org/wiki/Q283"}},
+    {"subject":"二酸化炭素","subject_aliases":["炭酸ガス"],"relation":"化学式","relation_aliases":["分子式"],"object":"CO2","source":{"provider":"Wikidata","subject_id":"Q1997","property_id":"P274","object_id":"Q1997","url":"https://www.wikidata.org/wiki/Q1997"}},
+    {"subject":"塩化ナトリウム","subject_aliases":["食塩"],"relation":"化学式","relation_aliases":["組成式"],"object":"NaCl","source":{"provider":"Wikidata","subject_id":"Q2314","property_id":"P274","object_id":"Q2314","url":"https://www.wikidata.org/wiki/Q2314"}},
+    {"subject":"太陽系","subject_aliases":["太陽系の惑星"],"relation":"最も大きい惑星","relation_aliases":["一番大きい惑星","最大の惑星"],"object":"木星","source":{"provider":"Wikidata","subject_id":"Q544","property_id":"P527","object_id":"Q319","url":"https://www.wikidata.org/wiki/Q319"}},
+    {"subject":"地球","subject_aliases":["地球の周囲"],"relation":"天然の衛星","relation_aliases":["唯一の自然衛星","衛生"],"object":"月","source":{"provider":"Wikidata","subject_id":"Q2","property_id":"P398","object_id":"Q405","url":"https://www.wikidata.org/wiki/Q405"}}
+  ]
+}
