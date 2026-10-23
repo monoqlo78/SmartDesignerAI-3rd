@@ -1,0 +1,47 @@
+SmartDesignerAI Non-Commercial & Anti-Cloning License v1.0
+==========================================================
+
+Copyright (c) 2026 Smart Designer (Masaaki Sogabe). All rights reserved.
+Commercial Licensing & Inquiries: msogabe@sdesigner.tokyo
+
+1. Scope
+--------
+This License governs the use of the "SmartDesignerAI-3rd" ("SD-Sol-Class-R28")
+model specifications, evaluation artifacts, client interfaces, HippoRAG 2 associative
+memory, Sol-Class neuro-symbolic cognitive runtime, and any associated derivative adapter
+weights provided by Smart Designer ("Licensor").
+
+2. Permitted Non-Commercial Evaluation Use
+------------------------------------------
+Subject to the restrictions below, Licensor grants you a revocable, non-exclusive,
+non-transferable, royalty-free license to view and reference the documentation,
+benchmark specifications, and client code in this repository solely for internal,
+non-commercial evaluation and academic research.
+
+3. Strict Prohibitions (Anti-Cloning & IP Protection)
+-----------------------------------------------------
+Without a separate written commercial license agreement from Licensor, you MAY NOT:
+  (a) Commercial Use: Use the model, its weights, cognitive runtime, or its outputs for
+      any commercial, revenue-generating, or production business purpose.
+  (b) Redistribution & Hosting: Redistribute, sublicense, publish, sell, lease, or
+      host the model or adapter weights as a managed service or API for third parties.
+  (c) Model Cloning, Distillation, or Synthetic Training: Use the model, its weights,
+      logits, hidden states, or generated outputs to train, fine-tune, distill, or
+      evaluate any other machine learning model or competing AI system.
+  (d) Reverse Engineering: Attempt to extract, reconstruct, or reverse-engineer the
+      proprietary KL-GRPO training mixture, replay dataset recipes, cognitive verifiers,
+      or watermarked weights.
+
+4. Commercial Licensing
+-----------------------
+For commercial deployment, enterprise on-premises weight distribution, API access,
+or custom domain adaptation, please contact:
+
+  Smart Designer (Masaaki Sogabe)
+  Email: msogabe@sdesigner.tokyo
+
+5. Disclaimer of Warranty
+-------------------------
+THE SOFTWARE AND MODEL ARTIFACTS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.

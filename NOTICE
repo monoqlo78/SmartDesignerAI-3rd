@@ -1,0 +1,23 @@
+NOTICE — SmartDesignerAI-3rd (SD-Sol-Class-R28)
+===============================================
+
+Copyright (c) 2026 Smart Designer (Masaaki Sogabe). All rights reserved.
+Contact for Commercial Licensing: msogabe@sdesigner.tokyo
+
+Base Model Attribution (Apache License 2.0, Section 4):
+-------------------------------------------------------
+SmartDesignerAI-3rd ("SD-Sol-Class-R28") is a derivative work built by combining
+a proprietary low-rank adaptation (LoRA) module, HippoRAG 2 associative graph memory,
+and a Sol-Class neuro-symbolic cognitive verification runtime on top of the unmodified
+base model "Qwen/Qwen3-4B" (commit 1cfa9a7208912126459214e8b04321603b3df60c), originally
+developed by Alibaba Cloud (Qwen Team) and released under the Apache License, Version 2.0
+(https://www.apache.org/licenses/LICENSE-2.0).
+
+In accordance with Section 4 of the Apache License, Version 2.0:
+1. The underlying base model "Qwen/Qwen3-4B" remains licensed under the Apache
+   License, Version 2.0.
+2. Significant modifications, proprietary KL-anchored multi-family training,
+   HippoRAG 2 associative encyclopedia memory, Sol-Class GenPRM test-time scaling runtime,
+   and LoRA adapter weights (`cae1902dac8a447179c155791d4d03755125746de392b10dd6e3c1a3b3c0a76b`)
+   were created by Smart Designer (Masaaki Sogabe) and are governed by the
+   SmartDesignerAI Non-Commercial & Anti-Cloning License v1.0 (see LICENSE).

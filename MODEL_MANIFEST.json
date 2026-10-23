@@ -1,0 +1,67 @@
+{
+  "model_name": "SmartDesignerAI-3rd",
+  "model_codename": "SD-Qwen3-4B-Sol-Class-R28",
+  "version": "3.0.0",
+  "release_date": "2026-10-23",
+  "owner": "Smart Designer (Masaaki Sogabe)",
+  "commercial_contact": "msogabe@sdesigner.tokyo",
+  "license": "SmartDesignerAI Non-Commercial & Anti-Cloning License v1.0",
+  "base_model": {
+    "id": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "license": "Apache-2.0",
+    "quantization": "4-bit NF4 double quantization (fp16 compute)"
+  },
+  "proprietary_stack": {
+    "adapter_type": "PEFT LoRA + GenPRM Test-Time Scaling + HippoRAG 2 PPR Graph Memory + Dynamic Specialist Composition",
+    "rank": 16,
+    "alpha": 32,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "weights_filename": "adapter_model.safetensors",
+    "weights_sha256": "cae1902dac8a447179c155791d4d03755125746de392b10dd6e3c1a3b3c0a76b",
+    "sol_cognitive_engine_sha256": "637bef5e1dfc0434878c5a573896fd76f87477bfda22c60d2669090cf3abba2c",
+    "hipporag2_graph_module_sha256": "266e4c13566b409a79d3cf2deb60bedd7a31e09ee9083d575c857d8f0bbdfdc1",
+    "sol_knowledge_graph_v3_sha256": "ad9e94604fa48ba3a587291e8b3692db0cf69379f29db398dc4981f9d479104f",
+    "knowledge_pack_v2_sha256": "daf9466bca750a2b196ad21dba43bfabf624201eb621a9fb5d75904a62cdf6a7",
+    "evaluation_summary_sha256": "69f0de40440803c14cc076b35737e381e24c581006a782806e79a4bbf80bbdae",
+    "distribution": "Private / Gated (Request commercial or evaluation access via msogabe@sdesigner.tokyo)"
+  },
+  "verified_benchmarks": {
+    "total_149_panel": {
+      "passed": 149,
+      "total": 149,
+      "accuracy": 1.0
+    },
+    "grounded_holdout_23": {
+      "strict_accuracy": 1.0,
+      "passed": 23,
+      "total": 23,
+      "baseline_passed": 2
+    },
+    "fresh_general_capability_96": {
+      "accuracy": 1.0,
+      "passed": 96,
+      "total": 96,
+      "baseline_passed": 68,
+      "smartdesigner_1st_passed": 87,
+      "smartdesigner_2nd_passed": 96
+    },
+    "sol_bench_ja_30": {
+      "accuracy": 1.0,
+      "passed": 30,
+      "total": 30,
+      "by_family": {
+        "multihop_graph_qa": { "passed": 6, "total": 6, "accuracy": 1.0 },
+        "constrained_optimization": { "passed": 6, "total": 6, "accuracy": 1.0 },
+        "algorithmic_synthesis": { "passed": 6, "total": 6, "accuracy": 1.0 },
+        "cross_doc_contradiction_audit": { "passed": 6, "total": 6, "accuracy": 1.0 },
+        "enterprise_architecture_security": { "passed": 6, "total": 6, "accuracy": 1.0 }
+      }
+    }
+  }
+}
